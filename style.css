@@ -155,7 +155,6 @@ body{
         height: 60vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        row-gap: 30px;
     }
 }
 
@@ -176,11 +175,15 @@ body{
     .counter{
         grid-template-columns: 1fr 1fr;
         column-gap: 20px;
-        row-gap: 20px;
+        row-gap: 10px;
     }
 
     .counter .box{
         width: 150px;
         height: 150px;
+    }
+
+    .counter .box h1{
+        margin: 10px;
     }
 }
