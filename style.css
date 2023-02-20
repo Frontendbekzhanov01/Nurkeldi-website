@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: islamicfont;
+    src: url("./Sources/medias/fONTS/Hidayatullah.otf");
+}
+
 :root{
     --color-glass:rgba(255, 255, 255, 0.475);
-    --font-f: 'hidayatullah';
 }
 
 body{
@@ -43,12 +47,16 @@ body{
     z-index: -1;
 }
 
+.mobile{
+    display: none;
+}
+
 .backround h1{
     font-size: 50px !important;
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 20px;
-    font-family: sans-serif;
+    font-family: islamicfont;
 }
 
 .backround p{
@@ -83,9 +91,9 @@ body{
 .counter{
     width: 70%;
     height: 30vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 100px;
 }
 
 .box{
@@ -123,5 +131,56 @@ body{
     to{
         transform: translateY(100vh);
         opacity: 0;
+    }
+}
+
+/* ---=== Responsive ===--- */
+
+@media screen and (max-width:900px){
+    .mobile{
+        display: block;
+    }
+
+    .backround h1{
+        font-size: 60px;
+        margin: 30px;
+    }
+
+    .backround p{
+        display: none;
+    }
+
+    .counter{
+        width: 70%;
+        height: 60vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .mobile{
+        display: block;
+    }
+
+    .backround h1{
+        font-size: 60px;
+        margin: 30px;
+    }
+
+    .backround p{
+        display: none;
+    }
+
+    .counter{
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+
+    .counter .box{
+        width: 150px;
+        height: 150px;
     }
 }
